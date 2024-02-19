@@ -1,5 +1,7 @@
+import React from 'react';
 import UserImg from "./user.png"
 import styles from './Header.module.css'
+import { Link } from 'react-router-dom';
 
 const Header = () =>{
     return(
@@ -9,9 +11,9 @@ const Header = () =>{
             
                 <nav className = {styles.navigation}>
                     <ul>
-                        <li>Create</li>
-                        <li>Study</li>
-                        <li>Stats</li>
+                        <li><Link to="/create">Create</Link></li>
+                        <li><Link to="/study">Study</Link></li>
+                        <li><Link to="/stats">Stats</Link></li>
                     </ul>
                 </nav>
             
