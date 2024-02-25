@@ -1,0 +1,21 @@
+.option {
+  margin-bottom: 100px; 
+}
+
+.StudyPage {
+  display: flex;
+  width: 100%;
+}
+
+.StudyBox {
+  width: 20%;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.libraryBox {
+  flex: 1;
+  width: 80%;
+  border: 1px solid black;
+  margin-left: 10px;
+}

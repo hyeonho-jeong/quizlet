@@ -1,7 +1,71 @@
-import React from 'react';
+// StudyPage.js
+import React, { useState, useEffect } from 'react';
+import styles from './StudyPage.module.css';
+import ReviewImg from './review.png';
+import SchedulesImg from './schedules.png';
+import RemindersImg from './reminder.png';
+import Library from '../Library'; 
 
-const StudyPage = () => {
-    // Component logic here
-}
+const StudyPage = ({ selectedItems }) => {
+    const [newItem, setNewItem] = useState({ type: '', title: '', description: '' });
+
+    useEffect(() => {
+        setNewItem({ type: '', title: '', description: '' });
+    }, [selectedItems]);
+
+    const handleOptionClick = (option) => {
+        const newItem = {
+            type: option,
+            title: '',
+            description: '',
+        };
+    };
+
+    const renderLibraryContent = () => {
+        return selectedItems.map((item, index) => (
+            <div key={`${item.type}-${index}`} className={styles.libraryItem}>
+                <h2>{`Library ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}`}</h2>
+                {renderLibraryImage(item.type)}
+            </div>
+        ));
+    };
+
+    const renderLibraryImage = (option) => {
+        switch (option) {
+            case 'review':
+                return <img src={ReviewImg} alt={`Library ${option}`} style={{ width: 100 }} />;
+            case 'schedules':
+                return <img src={SchedulesImg} alt={`Library ${option}`} style={{ width: 100 }} />;
+            case 'reminder':
+                return <img src={RemindersImg} alt={`Library ${option}`} style={{ width: 100 }} />;
+            default:
+                return null;
+        }
+    };
+
+    return (
+        <div className={styles.StudyPage}>
+            <div className={`${styles.box} ${styles.StudyBox}`}>
+                <h1>Study</h1>
+                <div className={styles.option} onClick={() => handleOptionClick('review')}>
+                    <img src={ReviewImg} alt="Review" style={{ width: 50 }} />
+                    <span>Review</span>
+                </div>
+                <div className={styles.option} onClick={() => handleOptionClick('schedules')}>
+                    <img src={SchedulesImg} alt="Schedules" style={{ width: 50 }} />
+                    <span>Schedules</span>
+                </div>
+                <div className={styles.option} onClick={() => handleOptionClick('reminder')}>
+                    <img src={RemindersImg} alt="Reminder" style={{ width: 50 }} />
+                    <span>Reminder</span>
+                </div>
+            </div>
+
+            <div className={`${styles.box} ${styles.libraryBox}`}>
+                <Library selectedItems={selectedItems} />
+            </div>
+        </div>
+    );
+};
 
 export default StudyPage;

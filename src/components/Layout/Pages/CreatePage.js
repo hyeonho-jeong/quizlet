@@ -14,9 +14,7 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
 
   const handleOptionClick = (option) => {
     const newItem = {
-      type: option,
-      title: '',
-      description: '',
+      type: option
     };
     // Call the prop function from Layout to update selectedItems
     updateSelectedItems([...selectedItems, newItem]);
@@ -39,7 +37,7 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
   const renderLibraryContent = () => {
     return selectedItems.map((item, index) => (
       <div key={`${item.type}-${index}`} className={styles.libraryItem}>
-        <h2>{`Library ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}`}</h2>
+        <h2>{`${item.type.charAt(0).toUpperCase() + item.type.slice(1)}`}</h2>
         {renderLibraryImage(item.type)}
         <div className={styles.itemOptions}>
           <span onClick={() => handleEditItem(item)}>Edit</span>
