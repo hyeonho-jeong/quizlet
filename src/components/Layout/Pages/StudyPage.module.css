@@ -1,7 +1,4 @@
-.option {
-  margin-bottom: 100px; 
-}
-
+/* StudyPage.module.css */
 .StudyPage {
   display: flex;
   width: 100%;
@@ -18,4 +15,19 @@
   width: 80%;
   border: 1px solid black;
   margin-left: 10px;
+}
+
+.option {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.libraryContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.libraryItem {
+  margin: 10px;
+  cursor: pointer;
 }
