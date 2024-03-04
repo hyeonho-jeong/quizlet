@@ -1,0 +1,33 @@
+.layout {
+    padding-top: 80px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    height: 90vh;
+}
+
+.library {
+    grid-column: 1;
+    grid-row: span 2;
+    border: 1px solid black;
+    padding: 10px; /* Add padding for content */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+}
+
+.study {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    padding: 10px; /* Add padding for content */
+}
+
+.reminder {
+    grid-column: 2;
+    grid-row: 2;
+    border: 1px solid black;
+    padding: 10px; /* Add padding for content */
+}
