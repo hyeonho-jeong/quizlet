@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.library-list {
+  list-style: none;
+}
+
+.library-elem {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.main-link {
+  font-size: 36px;
+  color: black;
+  font-weight: bold;
+  text-decoration-line: none;
+}
+
+.link {
+  font-size: 30px;
+  color: black;
+  text-decoration-line: none;
+  margin: 10px;
+  padding: 10%;
+  border: black;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

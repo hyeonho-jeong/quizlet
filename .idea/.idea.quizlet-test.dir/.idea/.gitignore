@@ -2,10 +2,10 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/.idea.quizlet2.iml
 /contentModel.xml
 /projectSettingsUpdater.xml
 /modules.xml
+/.idea.quizlet-test.iml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
