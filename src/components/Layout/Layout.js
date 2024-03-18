@@ -6,6 +6,7 @@ import styles from "./Layout.module.css";
 import CreatePage from "./Pages/CreatePage";
 import StatsPage from "./Pages/StatsPage";
 import StudyPage from "./Pages/StudyPage";
+import LoginPage from './Pages/LoginPage';
 import Library from "./Library";  
 
 const Layout = () => {
@@ -46,6 +47,7 @@ const Layout = () => {
                     />
                     <Route path="/study" element={<StudyPage selectedItems={selectedItems} />} />
                     <Route path="/stats" element={<StatsPage />} />
+                    <Route path="/login" element ={<LoginPage/>}/>
                 </Routes>
             </div>
         </Router>
