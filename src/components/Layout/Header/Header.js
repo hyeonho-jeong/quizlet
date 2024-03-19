@@ -11,19 +11,15 @@ const Header = () => {
           Flipplt
         </Link>
 
-        <nav className={styles.navigation}>
-          <ul>
-            <li>
-              <Link to="/create">Create</Link>
-            </li>
-            <li>
-              <Link to="/study">Study</Link>
-            </li>
-            <li>
-              <Link to="/stats">Stats</Link>
-            </li>
-          </ul>
-        </nav>
+
+                <nav className={styles.navigation}>
+                    <ul>
+                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/create">Create</Link></li>
+                        <li><Link to="/study">Study</Link></li>
+                        <li><Link to="/stats">Stats</Link></li>
+                    </ul>
+                </nav>
 
         <img src={UserImg} alt="User" style={{ width: 50 }} />
         <Link to="/signup">Sign Up</Link>

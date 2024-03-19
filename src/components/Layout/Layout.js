@@ -8,7 +8,8 @@ import StatsPage from "./Pages/StatsPage";
 import StudyPage from "./Pages/StudyPage";
 import SignupPage from "./Pages/SignupPage";
 import SignupSuccessPage from "./Pages/SignupSuccessPage";
-import Library from "./Library";
+import LoginPage from './Pages/LoginPage';
+import Library from "./Library";  
 
 const Layout = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -61,6 +62,7 @@ const Layout = () => {
           <Route path="/stats" element={<StatsPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/signup/success" element={<SignupSuccessPage />} />
+          <Route path="/login" element ={<LoginPage/>}/>
         </Routes>
       </div>
     </Router>
