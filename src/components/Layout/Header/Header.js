@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 import UserImg from "./user.png";
-import styles from './Header.module.css';
-import { Link } from 'react-router-dom';
+import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    return (
-        <header className={styles.header}>
-            <div className={styles.contents}>
-                <Link to="/" className={styles.logo}>Flipplt</Link>
+  return (
+    <header className={styles.header}>
+      <div className={styles.contents}>
+        <Link to="/" className={styles.logo}>
+          Flipplt
+        </Link>
+
 
                 <nav className={styles.navigation}>
                     <ul>
@@ -18,10 +21,11 @@ const Header = () => {
                     </ul>
                 </nav>
 
-                <img src={UserImg} alt="User" style={{ width: 50 }} />
-            </div>
-        </header>
-    );
-}
+        <img src={UserImg} alt="User" style={{ width: 50 }} />
+        <Link to="/signup">Sign Up</Link>
+      </div>
+    </header>
+  );
+};
 
 export default Header;
