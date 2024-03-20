@@ -17,8 +17,6 @@ const EditPage = ({ selectedItems }) => {
     setTempData({ front: '', back: '' }); 
   };
 
-  
-  
 
   const handleSaveTempData = () => {
     const jsonData = JSON.stringify(createdCards);
