@@ -1,4 +1,3 @@
-// Layout.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Header/Header";
@@ -6,10 +5,11 @@ import styles from "./Layout.module.css";
 import CreatePage from "./Pages/CreatePage";
 import StatsPage from "./Pages/StatsPage";
 import StudyPage from "./Pages/StudyPage";
+import Library from "./Library";
+import EditPage from "./Pages/EditPage";
 import SignupPage from "./Pages/SignupPage";
 import SignupSuccessPage from "./Pages/SignupSuccessPage";
 import LoginPage from './Pages/LoginPage';
-import Library from "./Library";  
 
 const Layout = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -32,7 +32,6 @@ const Layout = () => {
                 <main>
                   <div className={styles.container}>
                     <div className={styles.library}>
-                      {/* Pass selectedItems and imageDirectory as props to Library */}
                       <Library
                         selectedItems={selectedItems}
                         imageDirectory="/path/to/layout/images"
@@ -60,9 +59,10 @@ const Layout = () => {
             element={<StudyPage selectedItems={selectedItems} />}
           />
           <Route path="/stats" element={<StatsPage />} />
+          <Route path="/edit" element={<EditPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/signup/success" element={<SignupSuccessPage />} />
-          <Route path="/login" element ={<LoginPage/>}/>
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
@@ -70,4 +70,3 @@ const Layout = () => {
 };
 
 export default Layout;
-

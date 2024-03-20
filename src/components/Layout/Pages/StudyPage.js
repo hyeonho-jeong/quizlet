@@ -19,8 +19,7 @@ const StudyPage = ({ selectedItems }) => {
       title: '',
       description: '',
     };
-    // Call the prop function from Layout to update selectedItems
-    // Note: In this example, we're not updating selectedItems in StudyPage directly
+   
   };
 
   const handleLibraryItemClick = (item) => {
