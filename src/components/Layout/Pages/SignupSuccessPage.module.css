@@ -1,0 +1,10 @@
+.signupSuccess {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 15rem;
+  color: #06d6a0;
+}
+
+.signupSuccessLink {
+  text-decoration: none;
+}

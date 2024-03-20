@@ -1,11 +1,9 @@
-// CreatePage.js
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './CreatePage.module.css';
-import FolderImg from './folder.png';
-import DeckImg from './paper-stack.png';
-import CardImg from './flash-cards.png';
-import EditPage from './EditPage';
+import React, { useState, useEffect } from "react";
+import styles from "./CreatePage.module.css";
+import FolderImg from "./folder.png";
+import DeckImg from "./paper-stack.png";
+import CardImg from "./flash-cards.png";
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
 const CreatePage = ({ selectedItems, updateSelectedItems }) => {
   const [newItem, setNewItem] = useState({ type: '', title: '', description: '' });
@@ -37,6 +35,7 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
 
   const handleDeleteItem = (item) => {
     const updatedItems = selectedItems.filter((selectedItem) => selectedItem !== item);
+    // Call the prop function from Layout to update selectedItems
     updateSelectedItems(updatedItems);
   };
 
@@ -56,12 +55,22 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
 
   const renderLibraryImage = (option) => {
     switch (option) {
-      case 'folder':
-        return <img src={FolderImg} alt={`Library ${option}`} style={{ width: 100 }} />;
-      case 'deck':
-        return <img src={DeckImg} alt={`Library ${option}`} style={{ width: 100 }} />;
-      case 'card':
-        return <img src={CardImg} alt={`Library ${option}`} style={{ width: 100 }} />;
+      case "folder":
+        return (
+          <img
+            src={FolderImg}
+            alt={`Library ${option}`}
+            style={{ width: 100 }}
+          />
+        );
+      case "deck":
+        return (
+          <img src={DeckImg} alt={`Library ${option}`} style={{ width: 100 }} />
+        );
+      case "card":
+        return (
+          <img src={CardImg} alt={`Library ${option}`} style={{ width: 100 }} />
+        );
       default:
         return null;
     }
@@ -74,21 +83,21 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
         <div className={styles.optionsContainer}>
           <div
             className={styles.option}
-            onClick={() => handleOptionClick('folder')}
+            onClick={() => handleOptionClick("folder")}
           >
             <img src={FolderImg} alt="Create Folder" style={{ width: 50 }} />
             <span>Folder</span>
           </div>
           <div
             className={styles.option}
-            onClick={() => handleOptionClick('deck')}
+            onClick={() => handleOptionClick("deck")}
           >
             <img src={DeckImg} alt="Create Deck" style={{ width: 50 }} />
             <span>Deck</span>
           </div>
           <div
             className={styles.option}
-            onClick={() => handleOptionClick('card')}
+            onClick={() => handleOptionClick("card")}
           >
             <img src={CardImg} alt="Create Card" style={{ width: 50 }} />
             <span>Card</span>
