@@ -1,12 +1,15 @@
 // CreatePage.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './CreatePage.module.css';
 import FolderImg from './folder.png';
 import DeckImg from './paper-stack.png';
 import CardImg from './flash-cards.png';
+import EditPage from './EditPage';
 
 const CreatePage = ({ selectedItems, updateSelectedItems }) => {
   const [newItem, setNewItem] = useState({ type: '', title: '', description: '' });
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   useEffect(() => {
     setNewItem({ type: '', title: '', description: '' });
@@ -14,14 +17,18 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
 
   const handleOptionClick = (option) => {
     const newItem = {
-      type: option
+      type: option,
     };
-    // Call the prop function from Layout to update selectedItems
     updateSelectedItems([...selectedItems, newItem]);
   };
 
   const handleEditItem = (item) => {
-    console.log(`Editing ${item.type}`);
+    if (item.type === 'deck') {
+      // Use the navigate function to navigate to the EditPage with the item information
+      navigate('/edit', { state: { item } });
+    } else {
+      console.log(`Editing ${item.type}`);
+    }
   };
 
   const handleShareItem = (item) => {
@@ -30,7 +37,6 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
 
   const handleDeleteItem = (item) => {
     const updatedItems = selectedItems.filter((selectedItem) => selectedItem !== item);
-    // Call the prop function from Layout to update selectedItems
     updateSelectedItems(updatedItems);
   };
 
@@ -40,8 +46,8 @@ const CreatePage = ({ selectedItems, updateSelectedItems }) => {
         <h2>{`${item.type.charAt(0).toUpperCase() + item.type.slice(1)}`}</h2>
         {renderLibraryImage(item.type)}
         <div className={styles.itemOptions}>
-          <span onClick={() => handleEditItem(item)}>Edit</span>
-          <span onClick={() => handleShareItem(item)}>Share</span>
+          <span onClick={() => handleEditItem(item)}>Edit  </span>
+          <span onClick={() => handleShareItem(item)}>Share  </span>
           <span onClick={() => handleDeleteItem(item)}>Delete</span>
         </div>
       </div>

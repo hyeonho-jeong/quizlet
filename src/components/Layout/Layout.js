@@ -6,7 +6,8 @@ import styles from "./Layout.module.css";
 import CreatePage from "./Pages/CreatePage";
 import StatsPage from "./Pages/StatsPage";
 import StudyPage from "./Pages/StudyPage";
-import Library from "./Library";  
+import Library from "./Library";
+import EditPage from "./Pages/EditPage"; 
 
 const Layout = () => {
     const [selectedItems, setSelectedItems] = useState([]);
@@ -29,7 +30,6 @@ const Layout = () => {
                                 <main>
                                     <div className={styles.container}>
                                         <div className={styles.library}>
-                                            {/* Pass selectedItems and imageDirectory as props to Library */}
                                             <Library selectedItems={selectedItems} imageDirectory="/path/to/layout/images" />
                                         </div>
                                         <div className={styles.study}>Today's Study</div>
@@ -46,6 +46,9 @@ const Layout = () => {
                     />
                     <Route path="/study" element={<StudyPage selectedItems={selectedItems} />} />
                     <Route path="/stats" element={<StatsPage />} />
+
+                    {/* Add the route for EditPage */}
+                    <Route path="/edit" element={<EditPage />} />
                 </Routes>
             </div>
         </Router>

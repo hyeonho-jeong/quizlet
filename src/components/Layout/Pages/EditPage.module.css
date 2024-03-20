@@ -1,0 +1,59 @@
+/* EditPage.module.css */
+
+.editPage {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.box {
+  padding: 20px;
+  width: 45%;
+}
+
+.addNewCardBox {
+  width: 20%;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.tempBox {
+  flex: 1;
+  width: 80%;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
+.frontBackBoxes {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.frontBox,
+.backBox {
+  width: 48%; 
+  margin-bottom: 10px; /* Added margin for better spacing */
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
