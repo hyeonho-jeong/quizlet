@@ -13,6 +13,7 @@ const EditPage = ({ selectedItems }) => {
       tempData: { ...tempData }
     };
 
+    //front and back information
     setCreatedCards([...createdCards, card]);
     setTempData({ front: '', back: '' }); 
   };
