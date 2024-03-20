@@ -16,6 +16,8 @@ const EditPage = ({ selectedItems }) => {
     setCreatedCards([...createdCards, card]);
     setTempData({ front: '', back: '' }); 
   };
+
+  
   
 
   const handleSaveTempData = () => {
